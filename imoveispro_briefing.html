@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ImóveisPRO — Briefing Criativo</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rosa: #FF3366;
+  --preto: #0e0e0e;
+  --branco: #F8F6F2;
+  --cinza: #888580;
+  --cinza-escuro: #1c1c1c;
+  --cinza-borda: #2a2a2a;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--preto);
+  color: var(--branco);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 3rem;
+  background: rgba(14,14,14,0.92);
+  border-bottom: 0.5px solid var(--cinza-borda);
+  backdrop-filter: blur(12px);
+}
+.nav-logo { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--branco); text-decoration: none; }
+.nav-logo span { color: var(--rosa); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 12px; color: var(--cinza); text-decoration: none; letter-spacing: .06em; transition: color .2s; }
+.nav-links a:hover { color: var(--branco); }
+.nav-tag { font-size: 11px; color: var(--cinza); border: 0.5px solid var(--cinza-borda); padding: 5px 12px; border-radius: 20px; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 3rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 40%, rgba(255,51,102,0.08) 0%, transparent 60%),
+    linear-gradient(180deg, transparent 40%, rgba(14,14,14,0.95) 100%);
+}
+.hero-grid-lines {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+.hero-eyebrow {
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--rosa); margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 1rem;
+  position: relative; z-index: 1;
+}
+.hero-eyebrow::before {
+  content: ''; display: block; width: 32px; height: 1px; background: var(--rosa);
+}
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(72px, 10vw, 140px);
+  line-height: .92;
+  letter-spacing: -.01em;
+  position: relative; z-index: 1;
+  margin-bottom: 2rem;
+}
+.hero-title .accent { color: var(--rosa); }
+.hero-title .italic {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(60px, 8vw, 110px);
+  color: var(--branco);
+  display: block;
+}
+.hero-sub {
+  font-size: 15px; color: var(--cinza); max-width: 480px;
+  line-height: 1.7; position: relative; z-index: 1;
+  border-left: 2px solid var(--rosa); padding-left: 1.25rem;
+}
+.hero-pills {
+  display: flex; gap: .75rem; flex-wrap: wrap;
+  margin-top: 2.5rem; position: relative; z-index: 1;
+}
+.hero-pill {
+  font-size: 11px; color: var(--cinza); border: 0.5px solid var(--cinza-borda);
+  padding: 6px 14px; border-radius: 20px; letter-spacing: .04em;
+}
+.hero-number {
+  position: absolute; right: 3rem; bottom: 5rem;
+  font-family: 'Bebas Neue', sans-serif; font-size: 180px;
+  color: rgba(255,255,255,0.03); line-height: 1; z-index: 0;
+  user-select: none;
+}
+
+/* SECTIONS */
+section { padding: 6rem 3rem; border-top: 0.5px solid var(--cinza-borda); }
+.section-label {
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--rosa); margin-bottom: 3rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+.section-label::after {
+  content: ''; flex: 1; height: 0.5px; background: var(--cinza-borda);
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1; letter-spacing: .01em; margin-bottom: 1rem;
+}
+.section-title .a { color: var(--rosa); }
+
+/* CONCEITO */
+.conceito-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+.conceito-main {
+  grid-column: 1 / -1;
+  background: var(--cinza-escuro);
+  border: 0.5px solid var(--cinza-borda);
+  border-radius: 2px;
+  padding: 3rem;
+}
+.conceito-main-title {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  color: var(--branco);
+}
+.conceito-main-title span { color: var(--rosa); font-style: normal; font-family: 'Bebas Neue', sans-serif; font-size: .9em; }
+.conceito-main p { font-size: 15px; color: var(--cinza); line-height: 1.8; max-width: 680px; }
+.conceito-card {
+  background: var(--cinza-escuro);
+  border: 0.5px solid var(--cinza-borda);
+  border-radius: 2px;
+  padding: 2rem;
+}
+.conceito-card-label { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--cinza); margin-bottom: 1rem; }
+.conceito-card p { font-size: 14px; color: rgba(248,246,242,0.75); line-height: 1.75; font-style: italic; }
+
+/* PILARES */
+.pilares-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--cinza-borda); margin-top: 2rem; }
+.pilar {
+  background: var(--preto);
+  padding: 2.5rem 2rem;
+  transition: background .2s;
+}
+.pilar:hover { background: var(--cinza-escuro); }
+.pilar-num { font-size: 11px; color: var(--rosa); font-weight: 500; letter-spacing: .1em; margin-bottom: 1.5rem; }
+.pilar-name { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: .02em; margin-bottom: 1rem; color: var(--branco); }
+.pilar-desc { font-size: 13px; color: var(--cinza); line-height: 1.65; }
+
+/* TOM */
+.tom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+.tom-col { }
+.tom-col-label { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 1.25rem; font-weight: 500; }
+.tom-usar .tom-col-label { color: var(--rosa); }
+.tom-evitar .tom-col-label { color: var(--cinza); }
+.tom-item {
+  padding: .75rem 0;
+  border-bottom: 0.5px solid var(--cinza-borda);
+  font-size: 14px;
+  display: flex; align-items: flex-start; gap: .75rem;
+  color: rgba(248,246,242,0.8);
+}
+.tom-item:last-child { border-bottom: none; }
+.tom-usar .tom-dot { color: var(--rosa); font-size: 18px; line-height: 1; margin-top: 1px; }
+.tom-evitar .tom-item { color: var(--cinza); text-decoration: line-through; text-decoration-color: var(--cinza-borda); }
+.tom-evitar .tom-dot { display: none; }
+
+/* DIREÇÃO VISUAL */
+.visual-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem; }
+.visual-block {
+  border: 0.5px solid var(--cinza-borda);
+  border-radius: 2px;
+  padding: 2rem;
+}
+.visual-block-label { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--rosa); margin-bottom: 1.25rem; }
+.visual-item { font-size: 13px; color: var(--cinza); line-height: 1.65; padding: .5rem 0; border-bottom: 0.5px solid rgba(255,255,255,0.04); display: flex; gap: .75rem; }
+.visual-item:last-child { border-bottom: none; }
+.visual-item::before { content: '—'; color: var(--cinza-borda); flex-shrink: 0; }
+.palette-swatches { display: flex; gap: 1rem; margin-top: 1rem; }
+.sw { display: flex; flex-direction: column; gap: .5rem; align-items: center; }
+.sw-color { width: 48px; height: 48px; border-radius: 2px; }
+.sw-label { font-size: 10px; color: var(--cinza); }
+.sw-role { font-size: 10px; color: rgba(136,133,128,0.6); }
+
+/* EDITORIAS */
+.ed-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1px; background: var(--cinza-borda); }
+.ed-item { background: var(--preto); display: grid; grid-template-columns: 60px 1fr 1fr auto; gap: 2rem; padding: 2rem; align-items: start; transition: background .2s; }
+.ed-item:hover { background: var(--cinza-escuro); }
+.ed-num { font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--cinza-borda); line-height: 1; }
+.ed-name { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--branco); letter-spacing: .02em; margin-bottom: .5rem; }
+.ed-desc { font-size: 13px; color: var(--cinza); line-height: 1.65; }
+.ed-pautas { }
+.ed-pautas-label { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--cinza); margin-bottom: .75rem; }
+.ed-pauta { font-size: 12px; color: rgba(248,246,242,0.6); padding: .4rem 0; border-bottom: 0.5px solid rgba(255,255,255,0.04); line-height: 1.5; }
+.ed-pauta:last-child { border-bottom: none; }
+.ed-formats { display: flex; flex-direction: column; gap: .4rem; align-items: flex-end; }
+.fmt { font-size: 10px; border: 0.5px solid var(--cinza-borda); color: var(--cinza); padding: 4px 10px; border-radius: 20px; white-space: nowrap; }
+
+/* COPY */
+.copy-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+.copy-card {
+  border: 0.5px solid var(--cinza-borda);
+  border-radius: 2px;
+  padding: 1.75rem;
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.copy-editoria { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--rosa); }
+.copy-tag { font-size: 10px; color: var(--cinza); letter-spacing: .06em; }
+.copy-text {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--branco);
+  line-height: 1.65;
+  border-left: 2px solid var(--rosa);
+  padding-left: 1rem;
+  flex: 1;
+}
+.copy-note { font-size: 11px; color: var(--cinza); line-height: 1.55; padding-top: 1rem; border-top: 0.5px solid var(--cinza-borda); }
+
+/* MIX */
+.mix-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--cinza-borda); margin-top: 2rem; }
+.mix-item { background: var(--preto); padding: 2rem 1.5rem; }
+.mix-pct { font-family: 'Bebas Neue', sans-serif; font-size: 56px; color: var(--rosa); line-height: 1; margin-bottom: .5rem; }
+.mix-name { font-size: 13px; font-weight: 500; color: var(--branco); margin-bottom: .4rem; }
+.mix-desc { font-size: 11px; color: var(--cinza); line-height: 1.55; }
+
+/* CTAs */
+.cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+.cta-col-label { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 1rem; }
+.cta-usar .cta-col-label { color: var(--rosa); }
+.cta-evitar .cta-col-label { color: var(--cinza); }
+.cta-item { font-size: 14px; padding: .9rem 1.25rem; border: 0.5px solid var(--cinza-borda); border-radius: 2px; margin-bottom: .5rem; line-height: 1.5; }
+.cta-usar .cta-item { color: rgba(248,246,242,0.85); background: var(--cinza-escuro); }
+.cta-evitar .cta-item { color: var(--cinza); text-decoration: line-through; text-decoration-color: var(--cinza-borda); }
+
+/* FOOTER */
+footer {
+  padding: 3rem;
+  border-top: 0.5px solid var(--cinza-borda);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-left { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: .05em; }
+.footer-left span { color: var(--rosa); }
+.footer-right { font-size: 11px; color: var(--cinza); }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-eyebrow { animation: fadeUp .6s ease both; }
+.hero-title { animation: fadeUp .7s .1s ease both; }
+.hero-sub { animation: fadeUp .7s .2s ease both; }
+.hero-pills { animation: fadeUp .7s .3s ease both; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links, .nav-tag { display: none; }
+  section { padding: 4rem 1.5rem; }
+  .hero { padding: 0 1.5rem 4rem; }
+  .hero-number { display: none; }
+  .pilares-grid { grid-template-columns: 1fr 1fr; }
+  .conceito-grid { grid-template-columns: 1fr; }
+  .conceito-main { grid-column: 1; }
+  .ed-item { grid-template-columns: 40px 1fr; }
+  .ed-pautas, .ed-formats { display: none; }
+  .copy-grid { grid-template-columns: 1fr; }
+  .mix-grid { grid-template-columns: 1fr 1fr; }
+  .visual-grid { grid-template-columns: 1fr; }
+  .tom-grid { grid-template-columns: 1fr; }
+  .cta-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Imóveis<span>PRO</span></a>
+  <ul class="nav-links">
+    <li><a href="#conceito">Conceito</a></li>
+    <li><a href="#pilares">Pilares</a></li>
+    <li><a href="#visual">Visual</a></li>
+    <li><a href="#editorias">Editorias</a></li>
+    <li><a href="#copy">Copy</a></li>
+  </ul>
+  <span class="nav-tag">Briefing criativo · uso interno</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="border-top:none;">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-number">PRO</div>
+  <p class="hero-eyebrow">Briefing criativo · Nova linha gráfica e editorial</p>
+  <h1 class="hero-title">
+    São Paulo<br>
+    <span class="accent">como você</span><br>
+    <span class="italic">nunca morou.</span>
+  </h1>
+  <p class="hero-sub">Documento de direcionamento criativo para a equipe operacional. Conceito, posicionamento, direção visual, editorias e copy de referência.</p>
+  <div class="hero-pills">
+    <span class="hero-pill">Evolução visual</span>
+    <span class="hero-pill">SP · Juquehy · Miami</span>
+    <span class="hero-pill">Compradores + investidores</span>
+    <span class="hero-pill">Lifestyle urbano</span>
+    <span class="hero-pill">Corretor como guia da cidade</span>
+  </div>
+</section>
+
+<!-- CONCEITO -->
+<section id="conceito">
+  <p class="section-label">01 · Conceito central</p>
+  <div class="conceito-grid">
+    <div class="conceito-main">
+      <h2 class="conceito-main-title">
+        A ImóveisPRO existe no ponto onde a<br>cidade e as pessoas se <span>encontram.</span>
+      </h2>
+      <p>O corretor PRO é quem sabe onde vale chegar antes que todo mundo chegue. Quem entende que cada bairro tem uma frequência, uma temperatura, um ritmo próprio — e que encontrar o lugar certo é, no fundo, encontrar a versão da cidade que faz sentido pra você. Uma transação é o meio. A vida que começa depois é o que importa.</p>
+    </div>
+    <div class="conceito-card">
+      <p class="conceito-card-label">Declaração de posicionamento</p>
+      <p>"Somos uma imobiliária feita por quem lê a cidade — e por isso ajuda você a viver melhor nela. Cada endereço tem uma história antes de você chegar. A nossa função é contar essa história direito, com um humano responsável do outro lado."</p>
+    </div>
+    <div class="conceito-card">
+      <p class="conceito-card-label">Bio sugerida — Instagram</p>
+      <p style="font-style:normal; line-height:2;">🌎 Imobiliária que lê São Paulo<br>🙋 Fale com humanos — sempre<br>⚖️ Jurídico próprio<br>⭐⭐⭐⭐⭐ no Google<br>👑 Vem com quem é PRO</p>
+    </div>
+  </div>
+</section>
+
+<!-- PILARES -->
+<section id="pilares">
+  <p class="section-label">02 · Pilares de marca</p>
+  <div class="pilares-grid">
+    <div class="pilar">
+      <p class="pilar-num">01</p>
+      <p class="pilar-name">Fluência urbana</p>
+      <p class="pilar-desc">A marca conhece SP em profundidade — não como lista de bairros, mas como narrativa viva de cidade. O conhecimento precede a recomendação.</p>
+    </div>
+    <div class="pilar">
+      <p class="pilar-num">02</p>
+      <p class="pilar-name">Humanos reais</p>
+      <p class="pilar-desc">"Fale com humanos" não é diferencial de atendimento. É filosofia de marca. Precisa aparecer em tudo — no copy, na fotografia, nos bastidores.</p>
+    </div>
+    <div class="pilar">
+      <p class="pilar-num">03</p>
+      <p class="pilar-name">Atitude PRO</p>
+      <p class="pilar-desc">PRO não é título. É jeito de trabalhar — preparado, direto, sem enrolação. Autoridade que não cria distância. Confiança sem arrogância.</p>
+    </div>
+    <div class="pilar">
+      <p class="pilar-num">04</p>
+      <p class="pilar-name">Estilo de vida</p>
+      <p class="pilar-desc">O imóvel entra como consequência de uma visão de vida — não como ponto de partida do conteúdo. Primeiro a cidade, depois o endereço.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TOM DE VOZ -->
+<section id="tom">
+  <p class="section-label">03 · Tom de voz</p>
+  <div class="tom-grid">
+    <div class="tom-col tom-usar">
+      <p class="tom-col-label">Usar</p>
+      <div class="tom-item"><span class="tom-dot">·</span>Direto, sem floreio</div>
+      <div class="tom-item"><span class="tom-dot">·</span>Confiante, não arrogante</div>
+      <div class="tom-item"><span class="tom-dot">·</span>Cidade como personagem</div>
+      <div class="tom-item"><span class="tom-dot">·</span>Perguntas que provocam reflexão</div>
+      <div class="tom-item"><span class="tom-dot">·</span>Verdade antes do argumento</div>
+      <div class="tom-item"><span class="tom-dot">·</span>Primeira pessoa do plural</div>
+      <div class="tom-item"><span class="tom-dot">·</span>Experiência sensorial antes da ficha técnica</div>
+    </div>
+    <div class="tom-col tom-evitar">
+      <p class="tom-col-label">Evitar</p>
+      <div class="tom-item"><span></span>"Imóvel dos seus sonhos"</div>
+      <div class="tom-item"><span></span>"Alto padrão" como âncora</div>
+      <div class="tom-item"><span></span>Listas de features do imóvel como headline</div>
+      <div class="tom-item"><span></span>Tom de anúncio classificado</div>
+      <div class="tom-item"><span></span>Urgência artificial</div>
+      <div class="tom-item"><span></span>Frases motivacionais desconectadas</div>
+      <div class="tom-item"><span></span>CTA genérico "Entre em contato!"</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIREÇÃO VISUAL -->
+<section id="visual">
+  <p class="section-label">04 · Direção visual</p>
+  <div class="visual-grid">
+    <div class="visual-block">
+      <p class="visual-block-label">Paleta — uso correto</p>
+      <div class="palette-swatches">
+        <div class="sw"><div class="sw-color" style="background:#FF3366;"></div><p class="sw-label">Rosa PRO</p><p class="sw-role">Acento</p></div>
+        <div class="sw"><div class="sw-color" style="background:#0e0e0e;border:0.5px solid #2a2a2a;"></div><p class="sw-label">Preto</p><p class="sw-role">Dominante</p></div>
+        <div class="sw"><div class="sw-color" style="background:#F8F6F2;"></div><p class="sw-label">Off-white</p><p class="sw-role">Respiro</p></div>
+        <div class="sw"><div class="sw-color" style="background:#1c1c1c;border:0.5px solid #2a2a2a;"></div><p class="sw-label">Cinza escuro</p><p class="sw-role">Superfície</p></div>
+      </div>
+      <div style="margin-top:1.25rem;">
+        <div class="visual-item">Rosa como acento pontual — máximo 20% da área do frame</div>
+        <div class="visual-item">Nunca rosa como fundo dominante de post</div>
+        <div class="visual-item">Fundo preto para posts de imóvel e cidade</div>
+        <div class="visual-item">Off-white para posts educativos e depoimentos</div>
+      </div>
+    </div>
+    <div class="visual-block">
+      <p class="visual-block-label">Tipografia</p>
+      <div class="visual-item">Hierarquia extrema: headline 48–64px, corpo 13–14px</div>
+      <div class="visual-item">Máximo 2 tamanhos de tipo por frame</div>
+      <div class="visual-item">Headline sempre bold. Corpo sempre regular</div>
+      <div class="visual-item">Nenhum texto em caixa alta exceto "PRO" na assinatura</div>
+      <div class="visual-item">Máximo 2 linhas de headline, 3 de corpo por frame</div>
+      <div class="visual-item">Preferir tipografia como elemento gráfico principal</div>
+    </div>
+    <div class="visual-block">
+      <p class="visual-block-label">Fotografia</p>
+      <div class="visual-item">Luz natural sempre — rejeitar flash ou luz fria artificial</div>
+      <div class="visual-item">Cidade em quadro tanto quanto o imóvel</div>
+      <div class="visual-item">Equipe com expressão real — sem pose de catálogo</div>
+      <div class="visual-item">Zero stock com família sorrindo em sala branca</div>
+      <div class="visual-item">Tratamento: puxar para âmbar, reduzir ciano</div>
+      <div class="visual-item">Corte assimétrico — imagem não precisa ser centralizada</div>
+    </div>
+    <div class="visual-block">
+      <p class="visual-block-label">Composição e layout</p>
+      <div class="visual-item">Menos elementos por frame — respiro é posicionamento</div>
+      <div class="visual-item">Logo sempre pequeno e discreto — canto inferior</div>
+      <div class="visual-item">Carrossel: primeiro slide sem informação de produto</div>
+      <div class="visual-item">Stories: texto alinhado à esquerda, nunca centralizado</div>
+      <div class="visual-item">Evitar molduras e elementos gráficos sem função</div>
+      <div class="visual-item">CTAs tipográficos — não em botões coloridos</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDITORIAS -->
+<section id="editorias">
+  <p class="section-label">05 · Editorias</p>
+  <div class="ed-list">
+
+    <div class="ed-item">
+      <p class="ed-num">01</p>
+      <div>
+        <p class="ed-name">A cidade pelo olhar PRO</p>
+        <p class="ed-desc">Conteúdo sobre bairros, ruas e transformações urbanas. Não é guia turístico — é ponto de vista de quem mora e trabalha aqui. Posicionamento + alcance orgânico.</p>
+      </div>
+      <div class="ed-pautas">
+        <p class="ed-pautas-label">Pautas</p>
+        <p class="ed-pauta">O que o m² de Pinheiros diz sobre SP</p>
+        <p class="ed-pauta">5 ruas de SP que mudaram de tom</p>
+        <p class="ed-pauta">O bairro antes de ficar famoso</p>
+        <p class="ed-pauta">Morar perto do parque é um estilo de vida</p>
+        <p class="ed-pauta">Juquehy: o que os paulistanos foram buscar lá</p>
+      </div>
+      <div class="ed-formats"><span class="fmt">Carrossel</span><span class="fmt">Reels</span></div>
+    </div>
+
+    <div class="ed-item">
+      <p class="ed-num">02</p>
+      <div>
+        <p class="ed-name">Oportunidade PRO</p>
+        <p class="ed-desc">Apresentação de imóveis com narrativa, não ficha técnica. O espaço como possibilidade de vida. A experiência vem antes da informação técnica. Conversão + leads.</p>
+      </div>
+      <div class="ed-pautas">
+        <p class="ed-pautas-label">Pautas</p>
+        <p class="ed-pauta">Apê com luz de tarde — Jardim América</p>
+        <p class="ed-pauta">O apartamento que cabe dois escritórios</p>
+        <p class="ed-pauta">Cobertura com horizonte aberto — Moema</p>
+        <p class="ed-pauta">O imóvel que faz sentido para os próximos 10 anos</p>
+      </div>
+      <div class="ed-formats"><span class="fmt">Carrossel</span><span class="fmt">Stories</span></div>
+    </div>
+
+    <div class="ed-item">
+      <p class="ed-num">03</p>
+      <div>
+        <p class="ed-name">Por dentro da PRO</p>
+        <p class="ed-desc">Bastidores reais, equipe, processo. Humaniza a marca sem forçar. Não é "motivacional" — é transparência que constrói confiança antes da venda.</p>
+      </div>
+      <div class="ed-pautas">
+        <p class="ed-pautas-label">Pautas</p>
+        <p class="ed-pauta">Como a equipe estuda um bairro antes de recomendar</p>
+        <p class="ed-pauta">Um dia de atendimento — sem corte</p>
+        <p class="ed-pauta">Por que ter jurídico próprio muda tudo</p>
+        <p class="ed-pauta">O corretor apresenta o bairro — não o imóvel</p>
+      </div>
+      <div class="ed-formats"><span class="fmt">Reels</span><span class="fmt">Stories</span><span class="fmt">Cards</span></div>
+    </div>
+
+    <div class="ed-item">
+      <p class="ed-num">04</p>
+      <div>
+        <p class="ed-name">Saber PRO</p>
+        <p class="ed-desc">Educação de mercado com autoridade, sem condescendência. Para compradores e investidores. Sem clickbait, sem "5 dicas". Conteúdo que gera salvamento.</p>
+      </div>
+      <div class="ed-pautas">
+        <p class="ed-pautas-label">Pautas</p>
+        <p class="ed-pauta">O que ninguém te conta na hora de comprar</p>
+        <p class="ed-pauta">Locação em SP: o que mudou nos últimos 2 anos</p>
+        <p class="ed-pauta">Financiamento ou à vista — qual a conta certa?</p>
+        <p class="ed-pauta">Como ler um contrato de locação sem advogado</p>
+      </div>
+      <div class="ed-formats"><span class="fmt">Carrossel</span><span class="fmt">Cards</span></div>
+    </div>
+
+    <div class="ed-item">
+      <p class="ed-num">05</p>
+      <div>
+        <p class="ed-name">Prova PRO</p>
+        <p class="ed-desc">Histórias reais de clientes como narrativa de transformação. A PRO como facilitadora, não protagonista. Credibilidade construída por contexto, não por screenshot.</p>
+      </div>
+      <div class="ed-pautas">
+        <p class="ed-pautas-label">Pautas</p>
+        <p class="ed-pauta">Do aluguel à compra — a história do Rafael</p>
+        <p class="ed-pauta">Avaliação 5 estrelas — o que aconteceu</p>
+        <p class="ed-pauta">A família que escolheu SP com a PRO</p>
+      </div>
+      <div class="ed-formats"><span class="fmt">Cards</span><span class="fmt">Stories</span><span class="fmt">Reels</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MIX -->
+<section id="mix">
+  <p class="section-label">06 · Mix de conteúdo — proporção semanal</p>
+  <div class="mix-grid">
+    <div class="mix-item">
+      <p class="mix-pct">30%</p>
+      <p class="mix-name">Oportunidade PRO</p>
+      <p class="mix-desc">Conversão + geração de leads</p>
+    </div>
+    <div class="mix-item">
+      <p class="mix-pct">25%</p>
+      <p class="mix-name">Cidade pelo olhar PRO</p>
+      <p class="mix-desc">Posicionamento + alcance orgânico</p>
+    </div>
+    <div class="mix-item">
+      <p class="mix-pct">20%</p>
+      <p class="mix-name">Por dentro da PRO</p>
+      <p class="mix-desc">Humanização + retenção</p>
+    </div>
+    <div class="mix-item">
+      <p class="mix-pct">15%</p>
+      <p class="mix-name">Saber PRO</p>
+      <p class="mix-desc">Autoridade + salvamento</p>
+    </div>
+    <div class="mix-item">
+      <p class="mix-pct">10%</p>
+      <p class="mix-name">Prova PRO</p>
+      <p class="mix-desc">Credibilidade + prova social</p>
+    </div>
+  </div>
+</section>
+
+<!-- COPY DE REFERÊNCIA -->
+<section id="copy">
+  <p class="section-label">07 · Copy de referência</p>
+  <div class="copy-grid">
+    <div class="copy-card">
+      <p class="copy-editoria">Cidade pelo olhar PRO</p>
+      <p class="copy-tag">Legenda — carrossel de bairro</p>
+      <p class="copy-text">"Pinheiros não virou Pinheiros do dia pra noite. Foi um processo lento, de esquina em esquina, de bar em galeria, de vila em vila. Entender um bairro assim é o que diferencia quem indica um endereço de quem apenas o conhece."</p>
+      <p class="copy-note">Tom: ponto de vista, não descrição. Autoridade construída pela observação.</p>
+    </div>
+    <div class="copy-card">
+      <p class="copy-editoria">Oportunidade PRO</p>
+      <p class="copy-tag">Legenda — imóvel residencial</p>
+      <p class="copy-text">"Tem apartamento que você visita uma vez e fica pensando nele por dias. Esse é um desses. Luz da tarde entrando pela sala inteira, silêncio fora do comum para o endereço. Jardins, 3 dorms, 2 vagas."</p>
+      <p class="copy-note">Estrutura: experiência sensorial → silêncio → dados. Nunca o contrário.</p>
+    </div>
+    <div class="copy-card">
+      <p class="copy-editoria">Por dentro da PRO</p>
+      <p class="copy-tag">Legenda — bastidor equipe</p>
+      <p class="copy-text">"Antes de recomendar um bairro, a gente anda nele. Come nele. Entende quem mora e por quê. Só depois faz sentido falar de endereço."</p>
+      <p class="copy-note">Processo como prova de caráter — não como argumento de venda.</p>
+    </div>
+    <div class="copy-card">
+      <p class="copy-editoria">Por dentro da PRO</p>
+      <p class="copy-tag">Legenda — corretor no bairro</p>
+      <p class="copy-text">"Moema pra mim não é um bairro de carteira. É onde eu tomo café há oito anos. Então quando alguém me pergunta 'vale morar aqui?', a resposta não vem da ficha técnica."</p>
+      <p class="copy-note">Voz do corretor em primeira pessoa. Específico, nunca genérico.</p>
+    </div>
+    <div class="copy-card">
+      <p class="copy-editoria">Saber PRO</p>
+      <p class="copy-tag">Abertura de carrossel</p>
+      <p class="copy-text">"Comprar um imóvel tem partes bonitas e partes que ninguém explica direito. A gente prefere falar das duas."</p>
+      <p class="copy-note">Abertura que gera confiança antes de qualquer informação técnica.</p>
+    </div>
+    <div class="copy-card">
+      <p class="copy-editoria">Prova PRO</p>
+      <p class="copy-tag">Legenda — depoimento</p>
+      <p class="copy-text">"O Rafael passou dois anos alugando no Itaim antes de decidir comprar. Quando chegou até a gente, a primeira pergunta que fez foi: 'mas vocês vão me pressionar?' A resposta foi não."</p>
+      <p class="copy-note">A PRO entra como comportamento. O cliente é o protagonista.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTAs -->
+<section id="ctas">
+  <p class="section-label">08 · CTAs — usar e evitar</p>
+  <div class="cta-grid">
+    <div class="cta-col cta-usar">
+      <p class="cta-col-label">Usar</p>
+      <div class="cta-item">Fala com a gente — tem um humano do outro lado.</div>
+      <div class="cta-item">Qual bairro faz sentido pra você? Comenta aqui.</div>
+      <div class="cta-item">Quer saber mais? A gente responde de verdade.</div>
+      <div class="cta-item">Salva esse post — pode ser útil na hora H.</div>
+    </div>
+    <div class="cta-col cta-evitar">
+      <p class="cta-col-label">Evitar</p>
+      <div class="cta-item">Entre em contato agora!</div>
+      <div class="cta-item">Não perca essa oportunidade!</div>
+      <div class="cta-item">Agende sua visita hoje mesmo!</div>
+      <div class="cta-item">Clique no link da bio para mais informações.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-left">Imóveis<span>PRO</span> · Briefing criativo</p>
+  <p class="footer-right">Documento de uso interno · Direcionamento operacional</p>
+</footer>
+
+</body>
+</html>
