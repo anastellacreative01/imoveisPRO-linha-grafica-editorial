@@ -251,6 +251,117 @@ section { padding: 6rem 3rem; border-top: 0.5px solid var(--cinza-borda); }
 .cta-usar .cta-item { color: rgba(248,246,242,0.85); background: var(--cinza-escuro); }
 .cta-evitar .cta-item { color: var(--cinza); text-decoration: line-through; text-decoration-color: var(--cinza-borda); }
 
+/* PAUTAS + COPY POR EDITORIA */
+.pc-block { margin-bottom: 1px; background: var(--cinza-escuro); border: 0.5px solid var(--cinza-borda); border-radius: 2px; overflow: hidden; }
+.pc-header { display: flex; align-items: center; gap: 1rem; padding: 1.25rem 2rem; border-bottom: 0.5px solid var(--cinza-borda); background: var(--preto); }
+.pc-num { font-size: 11px; color: var(--rosa); font-weight: 500; letter-spacing: .1em; min-width: 20px; }
+.pc-name { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: .02em; color: var(--branco); }
+.pc-fmts { margin-left: auto; display: flex; gap: .4rem; }
+.pc-body { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.pc-col { padding: 1.75rem 2rem; }
+.pc-col:first-child { border-right: 0.5px solid var(--cinza-borda); }
+.pc-col-label { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--cinza); margin-bottom: 1rem; }
+.pauta-row { padding: .6rem 0; border-bottom: 0.5px solid rgba(255,255,255,0.05); }
+.pauta-row:last-child { border-bottom: none; }
+.pauta-row-title { font-size: 13px; font-weight: 500; color: var(--branco); margin-bottom: 2px; }
+.pauta-row-desc { font-size: 12px; color: var(--cinza); line-height: 1.55; }
+.copy-entry { margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 0.5px solid rgba(255,255,255,0.05); }
+.copy-entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.copy-entry-tag { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--rosa); margin-bottom: .5rem; }
+.copy-entry-text { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 14px; color: var(--branco); line-height: 1.65; border-left: 2px solid var(--rosa); padding-left: 1rem; margin-bottom: .5rem; }
+.copy-entry-note { font-size: 11px; color: var(--cinza); line-height: 1.5; }
+
+/* DESIGNER */
+.designer-intro { font-size: 15px; color: var(--cinza); line-height: 1.75; max-width: 680px; margin-bottom: 2.5rem; border-left: 2px solid var(--cinza-borda); padding-left: 1.25rem; }
+.dg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--cinza-borda); margin-bottom: 1px; }
+.dg-block { background: var(--preto); padding: 2rem; }
+.dg-label { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--rosa); margin-bottom: 1.25rem; }
+.dg-item { font-size: 13px; color: var(--cinza); line-height: 1.65; padding: .45rem 0; border-bottom: 0.5px solid rgba(255,255,255,0.04); display: flex; gap: .75rem; align-items: flex-start; }
+.dg-item:last-child { border-bottom: none; }
+.dg-item::before { content: '—'; color: var(--cinza-borda); flex-shrink: 0; font-size: 12px; margin-top: 1px; }
+.dg-item strong { color: rgba(248,246,242,0.7); font-weight: 500; }
+.dg-palette { background: var(--preto); padding: 2rem; border-top: 0.5px solid var(--cinza-borda); }
+.dg-swatches { display: flex; gap: 1.5rem; margin-top: 1rem; flex-wrap: wrap; }
+.dg-sw { display: flex; flex-direction: column; align-items: center; gap: .5rem; }
+.dg-sw-color { width: 56px; height: 56px; border-radius: 2px; }
+.dg-sw-name { font-size: 11px; color: var(--branco); font-weight: 500; }
+.dg-sw-role { font-size: 10px; color: var(--cinza); }
+.dg-sw-hex { font-size: 10px; color: rgba(136,133,128,0.6); font-family: monospace; }
+.dg-rule { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--cinza-borda); margin-top: 1px; }
+.dg-rule-do { background: var(--preto); padding: 1.75rem 2rem; border-left: 2px solid var(--rosa); border-radius: 0; }
+.dg-rule-dont { background: var(--preto); padding: 1.75rem 2rem; border-left: 2px solid var(--cinza-borda); }
+.dg-rule-label { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1rem; }
+.dg-rule-do .dg-rule-label { color: var(--rosa); }
+.dg-rule-dont .dg-rule-label { color: var(--cinza); }
+.dg-rule-item { font-size: 13px; color: var(--cinza); padding: .4rem 0; border-bottom: 0.5px solid rgba(255,255,255,0.04); line-height: 1.55; }
+.dg-rule-item:last-child { border-bottom: none; }
+.dg-rule-dont .dg-rule-item { text-decoration: line-through; text-decoration-color: var(--cinza-borda); }
+
+/* CHECKLIST */
+.cl-wrap { display: flex; flex-direction: column; gap: 1px; background: var(--cinza-borda); margin-top: 2rem; }
+.cl-group { background: var(--preto); }
+.cl-group-head { border-left: 2px solid var(--rosa); }
+.cl-group-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 2rem;
+  border-bottom: 0.5px solid var(--cinza-borda);
+  background: var(--cinza-escuro);
+}
+.cl-group-role { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: .04em; color: var(--branco); }
+.cl-group-names { display: flex; gap: .5rem; }
+.cl-name { font-size: 12px; border: 0.5px solid var(--cinza-borda); color: var(--cinza); padding: 4px 12px; border-radius: 20px; }
+.cl-name-head { border-color: var(--rosa); color: var(--rosa); }
+.cl-items { padding: .5rem 0; }
+.cl-item {
+  display: flex; align-items: flex-start; gap: 1.25rem;
+  padding: .9rem 2rem;
+  border-bottom: 0.5px solid rgba(255,255,255,0.04);
+  cursor: pointer;
+  transition: background .15s;
+  user-select: none;
+}
+.cl-item:last-child { border-bottom: none; }
+.cl-item:hover { background: var(--cinza-escuro); }
+.cl-item input[type="checkbox"] { display: none; }
+.cl-check {
+  width: 18px; height: 18px; flex-shrink: 0;
+  border: 0.5px solid var(--cinza-borda);
+  border-radius: 3px;
+  margin-top: 2px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .15s;
+  position: relative;
+}
+.cl-check-head { border-color: rgba(255,51,102,0.4); }
+.cl-item input:checked ~ .cl-check {
+  background: var(--rosa);
+  border-color: var(--rosa);
+}
+.cl-item input:checked ~ .cl-check::after {
+  content: '';
+  display: block;
+  width: 5px; height: 9px;
+  border: 1.5px solid #fff;
+  border-top: none; border-left: none;
+  transform: rotate(42deg) translateY(-1px);
+}
+.cl-item input:checked ~ .cl-item-body .cl-item-text {
+  color: var(--cinza);
+  text-decoration: line-through;
+  text-decoration-color: var(--cinza-borda);
+}
+.cl-item-body { display: flex; flex-direction: column; gap: .35rem; flex: 1; }
+.cl-item-text { font-size: 14px; color: var(--branco); line-height: 1.5; transition: color .15s; }
+.cl-item-note { font-size: 12px; color: var(--cinza); line-height: 1.5; }
+.cl-item-who { display: flex; gap: .4rem; flex-wrap: wrap; }
+.cl-tag { font-size: 10px; border: 0.5px solid var(--cinza-borda); color: var(--cinza); padding: 2px 8px; border-radius: 20px; }
+.cl-tag-head { border-color: rgba(255,51,102,0.4); color: var(--rosa); }
+
+@media (max-width: 900px) {
+  .cl-group-header { flex-direction: column; align-items: flex-start; gap: .75rem; }
+  .cl-item { padding: .9rem 1.5rem; }
+}
+
 /* FOOTER */
 footer {
   padding: 3rem;
@@ -288,6 +399,10 @@ footer {
   .visual-grid { grid-template-columns: 1fr; }
   .tom-grid { grid-template-columns: 1fr; }
   .cta-grid { grid-template-columns: 1fr; }
+  .pc-body { grid-template-columns: 1fr; }
+  .pc-col:first-child { border-right: none; border-bottom: 0.5px solid var(--cinza-borda); }
+  .dg-grid { grid-template-columns: 1fr; }
+  .dg-rule { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -300,7 +415,10 @@ footer {
     <li><a href="#pilares">Pilares</a></li>
     <li><a href="#visual">Visual</a></li>
     <li><a href="#editorias">Editorias</a></li>
-    <li><a href="#copy">Copy</a></li>
+    <li><a href="#pautas-copy">Pautas + Copy</a></li>
+    <li><a href="#designer">Designer</a></li>
+    <li><a href="#ctas">CTAs</a></li>
+    <li><a href="#checklist">Checklist</a></li>
   </ul>
   <span class="nav-tag">Briefing criativo · uso interno</span>
 </nav>
@@ -570,52 +688,277 @@ footer {
   </div>
 </section>
 
-<!-- COPY DE REFERÊNCIA -->
-<section id="copy">
-  <p class="section-label">07 · Copy de referência</p>
-  <div class="copy-grid">
-    <div class="copy-card">
-      <p class="copy-editoria">Cidade pelo olhar PRO</p>
-      <p class="copy-tag">Legenda — carrossel de bairro</p>
-      <p class="copy-text">"Pinheiros não virou Pinheiros do dia pra noite. Foi um processo lento, de esquina em esquina, de bar em galeria, de vila em vila. Entender um bairro assim é o que diferencia quem indica um endereço de quem apenas o conhece."</p>
-      <p class="copy-note">Tom: ponto de vista, não descrição. Autoridade construída pela observação.</p>
+<!-- PAUTAS + COPY POR EDITORIA -->
+<section id="pautas-copy">
+  <p class="section-label">08 · Pautas e copy por editoria</p>
+
+  <div class="pc-block">
+    <div class="pc-header">
+      <span class="pc-num">01</span>
+      <span class="pc-name">A cidade pelo olhar PRO</span>
+      <div class="pc-fmts"><span class="fmt">Carrossel</span><span class="fmt">Reels</span></div>
     </div>
-    <div class="copy-card">
-      <p class="copy-editoria">Oportunidade PRO</p>
-      <p class="copy-tag">Legenda — imóvel residencial</p>
-      <p class="copy-text">"Tem apartamento que você visita uma vez e fica pensando nele por dias. Esse é um desses. Luz da tarde entrando pela sala inteira, silêncio fora do comum para o endereço. Jardins, 3 dorms, 2 vagas."</p>
-      <p class="copy-note">Estrutura: experiência sensorial → silêncio → dados. Nunca o contrário.</p>
+    <div class="pc-body">
+      <div class="pc-col">
+        <p class="pc-col-label">Pautas</p>
+        <div class="pauta-row"><p class="pauta-row-title">O que o m² de Pinheiros diz sobre SP</p><p class="pauta-row-desc">Leitura de mercado com viés de cultura urbana. Por que Pinheiros virou o que virou — e para onde vai.</p></div>
+        <div class="pauta-row"><p class="pauta-row-title">5 ruas de SP que mudaram de tom</p><p class="pauta-row-desc">Augusta, Fradique, Haddock Lobo — transformações reais de microterritórios, cada uma com narrativa própria.</p></div>
+        <div class="pauta-row"><p class="pauta-row-title">O bairro antes de ficar famoso</p><p class="pauta-row-desc">Vila Madalena, Itaim, Brooklin — onde estavam antes. E qual o próximo? Perspectiva de quem trabalha no mercado.</p></div>
+        <div class="pauta-row"><p class="pauta-row-title">Morar perto do parque é um estilo de vida</p><p class="pauta-row-desc">O raio de influência de cada área verde na escolha de endereço em SP.</p></div>
+        <div class="pauta-row"><p class="pauta-row-title">Juquehy: o que os paulistanos foram buscar lá</p><p class="pauta-row-desc">A extensão do estilo de vida de SP para o litoral. Quem vai, por que vai, o que encontra.</p></div>
+      </div>
+      <div class="pc-col">
+        <p class="pc-col-label">Copy de referência</p>
+        <div class="copy-entry">
+          <p class="copy-entry-tag">Legenda — carrossel de bairro</p>
+          <p class="copy-entry-text">"Pinheiros não virou Pinheiros do dia pra noite. Foi um processo lento, de esquina em esquina, de bar em galeria, de vila em vila. Entender um bairro assim é o que diferencia quem indica um endereço de quem apenas o conhece."</p>
+          <p class="copy-entry-note">Tom: ponto de vista, não descrição. Autoridade pela observação, não pelo título.</p>
+        </div>
+        <div class="copy-entry">
+          <p class="copy-entry-tag">Abertura de carrossel — provocação</p>
+          <p class="copy-entry-text">"Tem bairro que você sente antes de entender. Vila Madalena foi assim. Itaim foi assim. Agora tem um outro lugar em SP passando pela mesma coisa — e a maioria ainda não percebeu."</p>
+          <p class="copy-entry-note">Não entrega a resposta no primeiro slide. Gera swipe.</p>
+        </div>
+        <div class="copy-entry">
+          <p class="copy-entry-tag">CTA</p>
+          <p class="copy-entry-text">"Qual bairro você acha que é o próximo? Comenta aqui."</p>
+          <p class="copy-entry-note">CTA como conversa, não como venda.</p>
+        </div>
+      </div>
     </div>
-    <div class="copy-card">
-      <p class="copy-editoria">Por dentro da PRO</p>
-      <p class="copy-tag">Legenda — bastidor equipe</p>
-      <p class="copy-text">"Antes de recomendar um bairro, a gente anda nele. Come nele. Entende quem mora e por quê. Só depois faz sentido falar de endereço."</p>
-      <p class="copy-note">Processo como prova de caráter — não como argumento de venda.</p>
+  </div>
+
+  <div class="pc-block">
+    <div class="pc-header">
+      <span class="pc-num">02</span>
+      <span class="pc-name">Oportunidade PRO</span>
+      <div class="pc-fmts"><span class="fmt">Carrossel</span><span class="fmt">Stories</span></div>
     </div>
-    <div class="copy-card">
-      <p class="copy-editoria">Por dentro da PRO</p>
-      <p class="copy-tag">Legenda — corretor no bairro</p>
-      <p class="copy-text">"Moema pra mim não é um bairro de carteira. É onde eu tomo café há oito anos. Então quando alguém me pergunta 'vale morar aqui?', a resposta não vem da ficha técnica."</p>
-      <p class="copy-note">Voz do corretor em primeira pessoa. Específico, nunca genérico.</p>
+    <div class="pc-body">
+      <div class="pc-col">
+        <p class="pc-col-label">Pautas</p>
+        <div class="pauta-row"><p class="pauta-row-title">Apê com luz de tarde — Jardim América</p><p class="pauta-row-desc">Entrada pelo elemento sensorial mais forte. A descrição começa pelo que se sente ao entrar, não pelo número de quartos.</p></div>
+        <div class="pauta-row"><p class="pauta-row-title">O apartamento que cabe dois escritórios</p><p class="pauta-row-desc">Pauta guiada por uso de vida, não por planta. Para quem trabalha em casa sem abrir mão de ter casa.</p></div>
+        <div class="pauta-row"><p class="pauta-row-title">Cobertura com horizonte aberto — Moema</p><p class="pauta-row-desc">Carrossel que começa pela vista, termina na planta. Primeiro a experiência, depois a informação técnica.</p></div>
+        <div class="pauta-row"><p class="pauta-row-title">O imóvel que faz sentido para os próximos 10 anos</p><p class="pauta-row-desc">Para o perfil investidor — localização como ativo de longo prazo, não apenas endereço.</p></div>
+      </div>
+      <div class="pc-col">
+        <p class="pc-col-label">Copy de referência</p>
+        <div class="copy-entry">
+          <p class="copy-entry-tag">Legenda — imóvel residencial</p>
+          <p class="copy-entry-text">"Tem apartamento que você visita uma vez e fica pensando nele por dias. Esse é um desses. Luz da tarde entrando pela sala inteira, silêncio fora do comum para o endereço, e uma cozinha que convida a cozinhar de verdade. Jardins, 3 dorms, 2 vagas."</p>
+          <p class="copy-entry-note">Estrutura: experiência → silêncio sensorial → dados. Nunca o contrário.</p>
+        </div>
+        <div class="copy-entry">
+          <p class="copy-entry-tag">Slide de abertura — carrossel</p>
+          <p class="copy-entry-text">"Alguns endereços em SP envelhecem bem. Esse é um deles."</p>
+          <p class="copy-entry-note">Uma linha. Sem hashtag, sem localização, sem m². O contexto vem nos próximos slides.</p>
+        </div>
+        <div class="copy-entry">
+          <p class="copy-entry-tag">CTA</p>
+          <p class="copy-entry-text">"Quer saber mais sobre esse? Fala com a gente — tem um humano do outro lado."</p>
+          <p class="copy-entry-note">Reforça o pilar humanização sem soar forçado.</p>
+        </div>
+      </div>
     </div>
-    <div class="copy-card">
-      <p class="copy-editoria">Saber PRO</p>
-      <p class="copy-tag">Abertura de carrossel</p>
-      <p class="copy-text">"Comprar um imóvel tem partes bonitas e partes que ninguém explica direito. A gente prefere falar das duas."</p>
-      <p class="copy-note">Abertura que gera confiança antes de qualquer informação técnica.</p>
+  </div>
+
+  <div class="pc-block">
+    <div class="pc-header">
+      <span class="pc-num">03</span>
+      <span class="pc-name">Por dentro da PRO</span>
+      <div class="pc-fmts"><span class="fmt">Reels</span><span class="fmt">Stories</span><span class="fmt">Cards</span></div>
     </div>
-    <div class="copy-card">
-      <p class="copy-editoria">Prova PRO</p>
-      <p class="copy-tag">Legenda — depoimento</p>
-      <p class="copy-text">"O Rafael passou dois anos alugando no Itaim antes de decidir comprar. Quando chegou até a gente, a primeira pergunta que fez foi: 'mas vocês vão me pressionar?' A resposta foi não."</p>
-      <p class="copy-note">A PRO entra como comportamento. O cliente é o protagonista.</p>
+    <div class="pc-body">
+      <div class="pc-col">
+        <p class="pc-col-label">Pautas</p>
+        <div class="pauta-row"><p class="pauta-row-title">Como a equipe estuda um bairro antes de recomendar</p><p class="pauta-row-desc">Processo real de pesquisa. O que os corretores fazem além de visitar o imóvel. Bastidor com autoridade.</p></div>
+        <div class="pauta-row"><p class="pauta-row-title">Um dia de atendimento — sem corte</p><p class="pauta-row-desc">Reel de bastidor do QG PRO. Naturalidade, ritmo, equipe real. Sem roteiro visível.</p></div>
+        <div class="pauta-row"><p class="pauta-row-title">Por que ter jurídico próprio muda tudo</p><p class="pauta-row-desc">Diferencial técnico em linguagem de proteção ao cliente, não de vantagem comercial.</p></div>
+        <div class="pauta-row"><p class="pauta-row-title">O corretor apresenta o bairro — não o imóvel</p><p class="pauta-row-desc">Série de Reels curtos com cada corretor mostrando o bairro em que é especialista. Voz própria, sem script.</p></div>
+      </div>
+      <div class="pc-col">
+        <p class="pc-col-label">Copy de referência</p>
+        <div class="copy-entry">
+          <p class="copy-entry-tag">Legenda — bastidor equipe</p>
+          <p class="copy-entry-text">"Antes de recomendar um bairro, a gente anda nele. Come nele. Entende quem mora e por quê. Só depois faz sentido falar de endereço."</p>
+          <p class="copy-entry-note">Processo como prova de caráter — não como argumento de venda.</p>
+        </div>
+        <div class="copy-entry">
+          <p class="copy-entry-tag">Legenda — corretor no bairro</p>
+          <p class="copy-entry-text">"Moema pra mim não é um bairro de carteira. É onde eu tomo café há oito anos. Então quando alguém me pergunta 'vale morar aqui?', a resposta não vem da ficha técnica."</p>
+          <p class="copy-entry-note">Voz do corretor em primeira pessoa. Específico, nunca genérico.</p>
+        </div>
+        <div class="copy-entry">
+          <p class="copy-entry-tag">Legenda — QG PRO</p>
+          <p class="copy-entry-text">"Esse é o lugar onde as decisões começam — antes de você chegar no apartamento. Vem conhecer."</p>
+          <p class="copy-entry-note">Convite sem exclamação. Tom de quem tem o que mostrar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pc-block">
+    <div class="pc-header">
+      <span class="pc-num">04</span>
+      <span class="pc-name">Saber PRO</span>
+      <div class="pc-fmts"><span class="fmt">Carrossel</span><span class="fmt">Cards</span></div>
+    </div>
+    <div class="pc-body">
+      <div class="pc-col">
+        <p class="pc-col-label">Pautas</p>
+        <div class="pauta-row"><p class="pauta-row-title">O que ninguém te conta na hora de comprar</p><p class="pauta-row-desc">Guia honesto do processo — sem omitir as partes difíceis. A PRO como quem não esconde a complexidade.</p></div>
+        <div class="pauta-row"><p class="pauta-row-title">Locação em SP: o que mudou nos últimos 2 anos</p><p class="pauta-row-desc">Leitura de mercado com dados reais. Para quem está decidindo entre comprar e alugar agora.</p></div>
+        <div class="pauta-row"><p class="pauta-row-title">Financiamento ou à vista — qual a conta certa?</p><p class="pauta-row-desc">Educação financeira aplicada ao imóvel, sem julgamento. Diferentes perfis, diferentes respostas.</p></div>
+        <div class="pauta-row"><p class="pauta-row-title">Como ler um contrato de locação sem advogado</p><p class="pauta-row-desc">Carrossel prático, linguagem direta. Reforça o diferencial de jurídico próprio como extensão natural.</p></div>
+      </div>
+      <div class="pc-col">
+        <p class="pc-col-label">Copy de referência</p>
+        <div class="copy-entry">
+          <p class="copy-entry-tag">Abertura de carrossel educativo</p>
+          <p class="copy-entry-text">"Comprar um imóvel tem partes bonitas e partes que ninguém explica direito. A gente prefere falar das duas."</p>
+          <p class="copy-entry-note">Abertura que gera confiança antes de qualquer informação técnica.</p>
+        </div>
+        <div class="copy-entry">
+          <p class="copy-entry-tag">Slide de abertura — direto</p>
+          <p class="copy-entry-text">"Antes de assinar qualquer coisa, lê isso."</p>
+          <p class="copy-entry-note">Imperativo direto. Funciona como título de artigo — não como chamada de anúncio.</p>
+        </div>
+        <div class="copy-entry">
+          <p class="copy-entry-tag">CTA — conteúdo educativo</p>
+          <p class="copy-entry-text">"Tem dúvida sobre algum desses pontos? Manda mensagem — a gente responde de verdade."</p>
+          <p class="copy-entry-note">"De verdade" reforça humanização sem ser explícito sobre isso.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pc-block">
+    <div class="pc-header">
+      <span class="pc-num">05</span>
+      <span class="pc-name">Prova PRO</span>
+      <div class="pc-fmts"><span class="fmt">Cards</span><span class="fmt">Stories</span><span class="fmt">Reels</span></div>
+    </div>
+    <div class="pc-body">
+      <div class="pc-col">
+        <p class="pc-col-label">Pautas</p>
+        <div class="pauta-row"><p class="pauta-row-title">Do aluguel à compra — a história do Rafael</p><p class="pauta-row-desc">Narrativa de jornada real. Onde estava, o que buscava, o que encontrou. A PRO como guia, não como vendedor.</p></div>
+        <div class="pauta-row"><p class="pauta-row-title">Avaliação 5 estrelas — o que aconteceu</p><p class="pauta-row-desc">Contextualiza o feedback com a situação que o gerou. Mais impacto que screenshot sem contexto.</p></div>
+        <div class="pauta-row"><p class="pauta-row-title">A família que escolheu SP com a PRO</p><p class="pauta-row-desc">Para comprador de fora que precisa de orientação total de cidade. Reforça o pilar fluência urbana.</p></div>
+      </div>
+      <div class="pc-col">
+        <p class="pc-col-label">Copy de referência</p>
+        <div class="copy-entry">
+          <p class="copy-entry-tag">Legenda — depoimento com narrativa</p>
+          <p class="copy-entry-text">"O Rafael passou dois anos alugando no Itaim antes de decidir comprar. Quando chegou até a gente, a primeira pergunta que fez foi: 'mas vocês vão me pressionar?' A resposta foi não — e continuou sendo não até o dia da assinatura."</p>
+          <p class="copy-entry-note">A PRO entra como comportamento, não como argumento. O cliente é o protagonista.</p>
+        </div>
+        <div class="copy-entry">
+          <p class="copy-entry-tag">Abertura de card — avaliação</p>
+          <p class="copy-entry-text">"'Nunca pensei que comprar um imóvel ia ser assim.' — cliente, Moema, 2024."</p>
+          <p class="copy-entry-note">Aspas reais, contexto real. Nada genérico.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- DIRECIONAMENTO PARA O DESIGNER -->
+<section id="designer">
+  <p class="section-label">09 · Direcionamento para o designer</p>
+  <p class="designer-intro">Instruções de execução visual para cada elemento da identidade aplicada às redes. Ler antes de montar qualquer template, layout ou criativo.</p>
+
+  <div class="dg-grid">
+    <div class="dg-block">
+      <p class="dg-label">Tipografia — regras de uso</p>
+      <div class="dg-item">Hierarquia de contraste extremo: <strong>headline 48–64px</strong>, corpo 13–14px</div>
+      <div class="dg-item">Máximo <strong>2 tamanhos de tipo</strong> por frame</div>
+      <div class="dg-item">Headline sempre <strong>bold</strong>. Corpo sempre <strong>regular</strong>. Nunca medium no meio</div>
+      <div class="dg-item">Nenhum texto em <strong>caixa alta</strong>, exceto "PRO" na assinatura de marca</div>
+      <div class="dg-item">Máximo <strong>2 linhas de headline</strong>, 3 de corpo por frame</div>
+      <div class="dg-item">Preferir tipografia como <strong>elemento gráfico principal</strong> — deixar a letra respirar</div>
+    </div>
+    <div class="dg-block">
+      <p class="dg-label">Fotografia — critérios de seleção</p>
+      <div class="dg-item"><strong>Luz natural sempre</strong> — rejeitar fotos com flash ou luz artificial fria</div>
+      <div class="dg-item">Cidade em quadro tanto quanto o imóvel — <strong>janelas, vistas, ruas</strong></div>
+      <div class="dg-item">Equipe com expressão real — <strong>sem pose de catálogo</strong> corporativo</div>
+      <div class="dg-item"><strong>Zero stock</strong> com família sorrindo em sala branca</div>
+      <div class="dg-item">Tratamento: puxar levemente para <strong>âmbar</strong>, reduzir ciano</div>
+      <div class="dg-item">Corte <strong>assimétrico</strong> — imagem não precisa ser centralizada no frame</div>
+    </div>
+    <div class="dg-block">
+      <p class="dg-label">Composição e layout</p>
+      <div class="dg-item"><strong>Menos elementos por frame</strong> — respiro é posicionamento, não desperdício</div>
+      <div class="dg-item">Logo sempre <strong>pequeno e discreto</strong> — canto inferior, nunca centralizado</div>
+      <div class="dg-item">Carrossel: <strong>primeiro slide sem produto</strong> — só headline e imagem</div>
+      <div class="dg-item">Stories: texto <strong>alinhado à esquerda</strong>, nunca centralizado</div>
+      <div class="dg-item">Evitar <strong>molduras, bordas decorativas</strong> e elementos sem função</div>
+      <div class="dg-item">CTAs <strong>tipográficos</strong> — não em botões com fundo colorido</div>
+    </div>
+  </div>
+
+  <div class="dg-palette">
+    <p class="dg-label">Paleta — uso correto</p>
+    <div class="dg-swatches">
+      <div class="dg-sw">
+        <div class="dg-sw-color" style="background:#FF3366;"></div>
+        <p class="dg-sw-name">Rosa PRO</p>
+        <p class="dg-sw-role">Acento pontual</p>
+        <p class="dg-sw-hex">#FF3366</p>
+      </div>
+      <div class="dg-sw">
+        <div class="dg-sw-color" style="background:#0e0e0e; border:0.5px solid #2a2a2a;"></div>
+        <p class="dg-sw-name">Preto</p>
+        <p class="dg-sw-role">Dominante</p>
+        <p class="dg-sw-hex">#0e0e0e</p>
+      </div>
+      <div class="dg-sw">
+        <div class="dg-sw-color" style="background:#F8F6F2; border:0.5px solid #ddd;"></div>
+        <p class="dg-sw-name">Off-white</p>
+        <p class="dg-sw-role">Respiro / fundo alt.</p>
+        <p class="dg-sw-hex">#F8F6F2</p>
+      </div>
+      <div class="dg-sw">
+        <div class="dg-sw-color" style="background:#1c1c1c; border:0.5px solid #2a2a2a;"></div>
+        <p class="dg-sw-name">Cinza escuro</p>
+        <p class="dg-sw-role">Superfície / card</p>
+        <p class="dg-sw-hex">#1c1c1c</p>
+      </div>
+      <div class="dg-sw">
+        <div class="dg-sw-color" style="background:#888580;"></div>
+        <p class="dg-sw-name">Cinza médio</p>
+        <p class="dg-sw-role">Texto secundário</p>
+        <p class="dg-sw-hex">#888580</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dg-rule">
+    <div class="dg-rule-do">
+      <p class="dg-rule-label">Usar o rosa assim</p>
+      <div class="dg-rule-item">Acento em detalhe tipográfico (uma palavra, uma linha)</div>
+      <div class="dg-rule-item">Borda ou linha de ênfase lateral</div>
+      <div class="dg-rule-item">Número, ícone ou tag de destaque</div>
+      <div class="dg-rule-item">Máximo 20% da área total do frame</div>
+      <div class="dg-rule-item">Fundo de Stories com texto branco — ocasionalmente</div>
+    </div>
+    <div class="dg-rule-dont">
+      <p class="dg-rule-label">Nunca usar o rosa assim</p>
+      <div class="dg-rule-item">Fundo dominante de post de feed</div>
+      <div class="dg-rule-item">Preenchimento de bloco grande em carrossel</div>
+      <div class="dg-rule-item">Cor de corpo de texto longo</div>
+      <div class="dg-rule-item">Background de headline inteiro</div>
+      <div class="dg-rule-item">Mais de 2 elementos rosa no mesmo frame</div>
+    </div>
+  </div>
+</section>
+
+<!-- COPY DE REFERÊNCIA — absorvida em pautas-copy por editoria -->
+
 <!-- CTAs -->
 <section id="ctas">
-  <p class="section-label">08 · CTAs — usar e evitar</p>
+  <p class="section-label">10 · CTAs — usar e evitar</p>
   <div class="cta-grid">
     <div class="cta-col cta-usar">
       <p class="cta-col-label">Usar</p>
@@ -631,6 +974,130 @@ footer {
       <div class="cta-item">Agende sua visita hoje mesmo!</div>
       <div class="cta-item">Clique no link da bio para mais informações.</div>
     </div>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section id="checklist">
+  <p class="section-label">11 · Checklist de implementação</p>
+
+  <div class="cl-wrap">
+
+    <div class="cl-group">
+      <div class="cl-group-header">
+        <span class="cl-group-role">Social media</span>
+        <div class="cl-group-names">
+          <span class="cl-name">Mateus</span>
+          <span class="cl-name">Gabrielle</span>
+        </div>
+      </div>
+      <div class="cl-items">
+        <label class="cl-item">
+          <input type="checkbox">
+          <span class="cl-check"></span>
+          <div class="cl-item-body">
+            <span class="cl-item-text">Estruturar moodboard e soundboard</span>
+            <span class="cl-item-who"><span class="cl-tag">Mateus</span><span class="cl-tag">Gabrielle</span></span>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox">
+          <span class="cl-check"></span>
+          <div class="cl-item-body">
+            <span class="cl-item-text">Atualizar conteúdos dos destaques no Instagram</span>
+            <span class="cl-item-note">Não serão criados novos destaques — apenas os conteúdos existentes serão atualizados</span>
+            <span class="cl-item-who"><span class="cl-tag">Gabrielle</span></span>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox">
+          <span class="cl-check"></span>
+          <div class="cl-item-body">
+            <span class="cl-item-text">Atualizar bio no Instagram</span>
+            <span class="cl-item-who"><span class="cl-tag">Gabrielle</span></span>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox">
+          <span class="cl-check"></span>
+          <div class="cl-item-body">
+            <span class="cl-item-text">Estruturar capas para Facebook e YouTube</span>
+            <span class="cl-item-who"><span class="cl-tag">Mateus</span></span>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox">
+          <span class="cl-check"></span>
+          <div class="cl-item-body">
+            <span class="cl-item-text">Aplicar capas nos perfis</span>
+            <span class="cl-item-who"><span class="cl-tag">Mateus</span></span>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox">
+          <span class="cl-check"></span>
+          <div class="cl-item-body">
+            <span class="cl-item-text">Aplicar artes prontas na apresentação</span>
+            <span class="cl-item-who"><span class="cl-tag">Mateus</span><span class="cl-tag">Gabrielle</span></span>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox">
+          <span class="cl-check"></span>
+          <div class="cl-item-body">
+            <span class="cl-item-text">Elaborar briefing para posts construídos por editorial</span>
+            <span class="cl-item-who"><span class="cl-tag">Mateus</span><span class="cl-tag">Gabrielle</span></span>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <div class="cl-group">
+      <div class="cl-group-header">
+        <span class="cl-group-role">Designer</span>
+        <div class="cl-group-names">
+          <span class="cl-name">Felipe</span>
+        </div>
+      </div>
+      <div class="cl-items">
+        <label class="cl-item">
+          <input type="checkbox">
+          <span class="cl-check"></span>
+          <div class="cl-item-body">
+            <span class="cl-item-text">Criar novas capas para Facebook e YouTube</span>
+            <span class="cl-item-who"><span class="cl-tag">Felipe</span></span>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox">
+          <span class="cl-check"></span>
+          <div class="cl-item-body">
+            <span class="cl-item-text">Criar posts construídos por editorial</span>
+            <span class="cl-item-who"><span class="cl-tag">Felipe</span></span>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <div class="cl-group cl-group-head">
+      <div class="cl-group-header">
+        <span class="cl-group-role">Head de criação</span>
+        <div class="cl-group-names">
+          <span class="cl-name cl-name-head">Ana Stella</span>
+        </div>
+      </div>
+      <div class="cl-items">
+        <label class="cl-item">
+          <input type="checkbox">
+          <span class="cl-check cl-check-head"></span>
+          <div class="cl-item-body">
+            <span class="cl-item-text">Validar material assim que finalizado</span>
+            <span class="cl-item-who"><span class="cl-tag cl-tag-head">Ana Stella</span></span>
+          </div>
+        </label>
+      </div>
+    </div>
+
   </div>
 </section>
 
